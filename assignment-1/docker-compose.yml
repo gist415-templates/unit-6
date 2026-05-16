@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+
+  postgis:
+    image: postgis/postgis:15-3.3
+    container_name: postgis
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gis
+    volumes:
+      # EDIT THIS PATH to match your machine:
+      # Windows example: C:/gist415/postgres_data:/var/lib/postgresql/data
+      # Mac example:     /Users/yourname/gist415/postgres_data:/var/lib/postgresql/data
+      - /path/to/your/postgres_data:/var/lib/postgresql/data
+    ports:
+      - "25432:5432"
+    networks:
+      - gist415
+
+  geoserver:
+    image: kartoza/geoserver:2.23.0
+    container_name: geoserver
+    environment:
+      GEOSERVER_DATA_DIR: /opt/geoserver/data_dir
+      GEOSERVER_ADMIN_PASSWORD: geoserver
+      GEOSERVER_ADMIN_USER: admin
+    volumes:
+      # EDIT THIS PATH to match your machine:
+      # Windows example: C:/gist415/geoserver_data:/opt/geoserver/data_dir
+      # Mac example:     /Users/yourname/gist415/geoserver_data:/opt/geoserver/data_dir
+      - /path/to/your/geoserver_data:/opt/geoserver/data_dir
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgis
+    networks:
+      - gist415
+
+networks:
+  gist415:
+    driver: bridge

@@ -1,0 +1,4 @@
+FROM kartoza/geoserver:2.23.0
+
+ENV GEOSERVER_ADMIN_USER=admin
+ENV GEOSERVER_ADMIN_PASSWORD=geoserver
