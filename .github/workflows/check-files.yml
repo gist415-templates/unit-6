@@ -20,7 +20,7 @@ jobs:
 
             const REQUIRED = {
               'assignment-1': [
-                'assignment-1/answers.txt',
+                'ANSWERS.md',
                 'assignment-1/screencap-volume-inspect.png'
               ],
               'assignment-2': [
@@ -29,7 +29,7 @@ jobs:
                 'assignment-2/screenshot_table.png'
               ],
               'assignment-3': [
-                'assignment-3/answers.md'
+                'ANSWERS.md'
               ]
             };
 
