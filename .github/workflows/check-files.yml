@@ -24,7 +24,7 @@ jobs:
                 'assignment-1/compose_screenshot.png'
               ],
               'assignment-2': [
-                'assignment-2/answers.md',
+                'ANSWERS.md',
                 'assignment-2/screencap-archsites.png',
                 'assignment-2/screencap-layergroup.png'
               ],
