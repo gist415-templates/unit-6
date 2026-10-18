@@ -1,4 +1,4 @@
-# Docker Quick Reference — Unit 7
+# Docker Quick Reference — Unit 6
 
 ## Common Commands
 

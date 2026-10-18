@@ -1,6 +1,6 @@
-# Prerequisites — Unit 7 Initialization
+# Prerequisites — Unit 6 Initialization
 
-Unit 7 builds on the Docker environment from Unit 6. If your Unit 6 PostGIS container is still running, you can reuse it. If not, follow these steps.
+Unit 6 builds on the Docker environment from Unit 5. If your Unit 5 PostGIS container is still running, you can reuse it. If not, follow these steps.
 
 ---
 
@@ -34,7 +34,7 @@ This starts both PostGIS and GeoServer together.
 ## Option B — Start containers manually
 
 ```bash
-# Start PostGIS (replace path with your data directory from Unit 6)
+# Start PostGIS (replace path with your data directory from Unit 5)
 docker run -d --name postgis \
   -e POSTGRES_PASSWORD=postgres \
   -v /your/path/postgres_data:/var/lib/postgresql/data \

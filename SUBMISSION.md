@@ -1,6 +1,6 @@
-# Unit 7 — Submission
+# Unit 6 — Submission
 
-All of your Unit 7 written answers go in this file. Replace every `_Your answer here._` with your own answer, and commit to your `unit-7-work` branch after each assignment.
+All of your Unit 6 written answers go in this file. Replace every `_Your answer here._` with your own answer, and commit to your `unit-6-work` branch after each assignment.
 
 Screenshots and other files go in each assignment's `assignment-N/` folder, using the exact file names below. Screenshots then appear in this file automatically when you view it on GitHub.
 
