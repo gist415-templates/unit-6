@@ -63,6 +63,8 @@ docker network inspect gist415
 
 PostGIS host from inside GeoServer: `postgis` (the container name), port `5432` (internal port, not 25432).
 
+The Assignment 1 Compose file joins `gist415` as an external network, so the network must exist before `docker compose up`; this lets the Assignment 3 data loader (`docker run --network gist415 ...`) reach `postgis`.
+
 ---
 
 ## Volumes
@@ -87,7 +89,7 @@ docker volume rm <volume-name>
 docker images
 
 # Pull an image
-docker pull postgis/postgis:15-3.3
+docker pull postgis/postgis:18-3.6-alpine
 docker pull kartoza/geoserver:2.23.0
 
 # Remove an image
@@ -101,8 +103,8 @@ docker rmi <image-id>
 | Container | Internal Port | External Port | URL |
 |---|---|---|---|
 | postgis | 5432 | 25432 | — |
-| geoserver | 8080 | 8080 | http://localhost:8080/geoserver/web |
-| nginx (A4) | 80 | 8888 | http://localhost:8888 |
+| geoserver | 8080 | 8280 | http://localhost:8280/geoserver/web |
+| nginx (A4) | 80 | 8880 | http://localhost:8880/geoserver.html |
 
 ---
 

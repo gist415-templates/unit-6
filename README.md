@@ -43,7 +43,7 @@ You work on **one branch** and open **one Pull Request** for the whole unit.
 | `getting-started.html` | Leaflet starter map centered on Hawaii (A4 — you will customize it) |
 | `INITIALIZING.md` | Prerequisites help if your Unit 5 environment isn't running |
 | `docker-notes.md` | Docker quick-reference for this unit |
-| `Dockerfile` | Container reference |
+| `Dockerfile` | GeoServer image reference (not used in the assignments) |
 | `populate.sh` | Helper script for OSM data import |
 | `assignment-1/docker-compose.yml` | Starting Compose config — edit volume paths for your machine |
 | `assignment-4/Dockerfile` | nginx Dockerfile for the Leaflet container — you will modify this |

@@ -1,18 +1,17 @@
-version: "3.8"
-
 services:
 
   postgis:
-    image: postgis/postgis:15-3.3
+    image: postgis/postgis:18-3.6-alpine
     container_name: postgis
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: gis
     volumes:
-      # EDIT THIS PATH to match your machine:
-      # Windows example: C:/gist415/postgres_data:/var/lib/postgresql/data
-      # Mac example:     /Users/yourname/gist415/postgres_data:/var/lib/postgresql/data
-      - /path/to/your/postgres_data:/var/lib/postgresql/data
+      # The folder before the colon is on your computer: use the same postgres_data folder as Unit 5.
+      # Windows: keep c:/gist415_data/postgres_data, or change it to your folder.
+      # Mac example: /Users/yourname/gist415_data/postgres_data:/var/lib/postgresql
+      # Never change the part after the colon.
+      - c:/gist415_data/postgres_data:/var/lib/postgresql
     ports:
       - "25432:5432"
     networks:
@@ -26,17 +25,18 @@ services:
       GEOSERVER_ADMIN_PASSWORD: geoserver
       GEOSERVER_ADMIN_USER: admin
     volumes:
-      # EDIT THIS PATH to match your machine:
-      # Windows example: C:/gist415/geoserver_data:/opt/geoserver/data_dir
-      # Mac example:     /Users/yourname/gist415/geoserver_data:/opt/geoserver/data_dir
-      - /path/to/your/geoserver_data:/opt/geoserver/data_dir
+      # Windows: keep c:/gist415_data/geoserver_data, or change it to your folder.
+      # Mac example: /Users/yourname/gist415_data/geoserver_data:/opt/geoserver/data_dir
+      - c:/gist415_data/geoserver_data:/opt/geoserver/data_dir
     ports:
-      - "8080:8080"
+      - "8280:8080"
     depends_on:
       - postgis
     networks:
       - gist415
 
+# The gist415 network from Unit 5, shared with the Assignment 3 data loader.
+# If Compose says it could not be found, run: docker network create gist415
 networks:
   gist415:
-    driver: bridge
+    external: true
